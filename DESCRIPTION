@@ -1,0 +1,13 @@
+Package: SPprm
+Title: Statistical methods with power calculation for paired repeated measures comparisons: application to pulse oximetry studies
+Version: 0.0.1
+Imports: nloptr
+Description: This package implements a novel approach to statistical test with sample size and power calculation for pulse oximetry like studies,
+              which are typically determined based on the paired repeated measures (PRM) design.
+Depends: 
+    R (>= 3.0.0)
+License: GPL (>= 2)
+LazyData: true
+Author: Baolin Wu [aut, cre]; Yun Bai [aut, cre]
+Maintainer: Baolin Wu <baolin@umn.edu>
+RoxygenNote: 6.0.1
