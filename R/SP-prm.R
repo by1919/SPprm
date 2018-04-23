@@ -18,9 +18,8 @@ llkfun <- function(xpar, Dij, rho=3){
 }
 ## Internal constraint function
 ## @param xpar vector of log(s2w), log(s2b), mu0
-## @param Dij  n by m matrix of paired data 
 ## @param rho  null value of sqrt(s2w+s2b+mu0^2)
-Cfun <- function(xpar, Dij, rho=3){
+Cfun <- function(xpar, rho=3){
    s2w = exp(xpar[1])
    s2b = exp(xpar[2])
    mu0 = xpar[3]
@@ -61,7 +60,7 @@ PRMtest <- function(X, rho=3){
   n = dim(X)[1]; m = dim(X)[2]
   ## est
   fn = function(xpar) llkfun(xpar, X, rho)
-  hin = function(xpar) Cfun(xpar, X, rho)
+  hin = function(xpar) Cfun(xpar, rho)
   aaa = nloptr::cobyla(c(log(5),log(5),1), fn, hin=hin)
   xpar = aaa$par
   e2w = exp(xpar[1]);  e2b = exp(xpar[2]);  eu0 = xpar[3]
