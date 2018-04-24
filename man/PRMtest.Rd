@@ -4,16 +4,19 @@
 \alias{PRMtest}
 \title{Conduct estimation and RMS test for paired repeated measures (PRM) designs of study}
 \usage{
-PRMtest(X, rho = 3)
+PRMtest(X, rho = 3, REML = TRUE)
 }
 \arguments{
 \item{X}{n by m matrix of paired measures}
 
 \item{rho}{null threshold of acceptable RMS value}
+
+\item{REML}{using REML instead of MLE. Default to TRUE.}
 }
 \value{
 \describe{
   \item{p.value}{ test p-values for: RMS test, score Z-test, Wald Z-test }
+  \item{pars}{ estimated null parameter values }
 }
 }
 \description{
