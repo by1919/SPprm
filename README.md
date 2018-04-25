@@ -3,7 +3,7 @@
  - Reference
     - Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test
       with sample size and power calculation for paired repeated
-      measures designs of method comparison studies. tech rep.
+      measures designs of method comparison studies. *tech rep*.
  - Sample R codes
 ```R
  ## install the package
@@ -20,5 +20,4 @@
  PRMtest(X, rho)$p.val
  ## power
  PRMtest(X, rho+0.5)$p.val
-
 ```
