@@ -4,8 +4,7 @@
 \alias{PRMap}
 \title{Analytical power calculation for PRM design problem}
 \usage{
-PRMap(alpha = 0.05, n = 20, m = 20, s2w = 4.44, s2b = 1.82,
-  mu = 1.01, rho = 3, REML = TRUE)
+PRMap(alpha = 0.05, n, m, s2w, s2b, mu, rho, REML = TRUE)
 }
 \arguments{
 \item{alpha}{desired significance level. Default to 0.05}

@@ -27,7 +27,7 @@ Cfun <- function(xpar, rho=3){
    s2w+s2b+mu0^2-rho^2
 }
 ## P-value calc
-Tpval0 <- function(xq, n=20, m=20, s2w=4.44, s2b=1.82, mu0=1.11){
+Tpval0 <- function(xq, n, m, s2w, s2b, mu0){
   lam = c(s2w+m*s2b, s2w);   h = c(n,n*(m-1))
   eta0 = n*m*mu0^2/lam[1]
   dta = c(eta0, 0)
@@ -59,7 +59,7 @@ Tpval0 <- function(xq, n=20, m=20, s2w=4.44, s2b=1.82, mu0=1.11){
 #' X = mu0 + u + e
 #' PRMtest(X,3)
 #' PRMtest(X, sqrt(s2w+s2b+mu0^2))
-PRMtest <- function(X, rho=3, REML=TRUE){
+PRMtest <- function(X, rho, REML=TRUE){
   n = dim(X)[1]; m = dim(X)[2]
   ## est
   fn = function(xpar) llkfun(xpar, X, REML)
@@ -111,7 +111,7 @@ PRMtest <- function(X, rho=3, REML=TRUE){
 #' @export
 #' @references
 #' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
-PRMap <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML=TRUE){
+PRMap <- function(alpha=0.05, n, m,s2w, s2b, mu, rho, REML=TRUE){
   ## est
   fn = function(xpar){
     e2w = exp(xpar[1])
@@ -161,7 +161,7 @@ PRMap <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML
 #' @export
 #' @references
 #' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
-PRMmcp <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML=TRUE, B=1e3){
+PRMmcp <- function(alpha=0.05,n, m, s2w, s2b, mu, rho, REML=TRUE, B=1e3){
   pval = rep(1, B)
   for(it in 1:B){
     e = matrix(rnorm(n*m), n,m)*sqrt(s2w)

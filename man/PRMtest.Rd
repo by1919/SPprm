@@ -4,7 +4,7 @@
 \alias{PRMtest}
 \title{Conduct estimation and RMS test for paired repeated measures (PRM) designs of study}
 \usage{
-PRMtest(X, rho = 3, REML = TRUE)
+PRMtest(X, rho, REML = TRUE)
 }
 \arguments{
 \item{X}{n by m matrix of paired measures}
