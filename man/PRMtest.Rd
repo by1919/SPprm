@@ -25,7 +25,7 @@ mixed effects model for the PRM designs, we can compute the likelihood analytica
 MLE. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented.
 }
 \examples{
-n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94; rho=3
+n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94
 e = matrix(rnorm(n*m), n,m)*sqrt(s2w)
 u = rnorm(n)*sqrt(s2b)
 X = mu0 + u + e
@@ -33,5 +33,5 @@ PRMtest(X,3)
 PRMtest(X, sqrt(s2w+s2b+mu0^2))
 }
 \references{
-Bai,Y., Wu,B. and ... (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 }

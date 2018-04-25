@@ -26,7 +26,7 @@ Cfun <- function(xpar, rho=3){
    mu0 = xpar[3]
    s2w+s2b+mu0^2-rho^2
 }
-## P-value calc with finite sample adjustment
+## P-value calc
 Tpval0 <- function(xq, n=20, m=20, s2w=4.44, s2b=1.82, mu0=1.11){
   lam = c(s2w+m*s2b, s2w);   h = c(n,n*(m-1))
   eta0 = n*m*mu0^2/lam[1]
@@ -51,9 +51,9 @@ Tpval0 <- function(xq, n=20, m=20, s2w=4.44, s2b=1.82, mu0=1.11){
 #' }
 #' @export
 #' @references
-#' Bai,Y., Wu,B. and ... (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+#' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 #' @examples
-#' n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94; rho=3
+#' n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94
 #' e = matrix(rnorm(n*m), n,m)*sqrt(s2w)
 #' u = rnorm(n)*sqrt(s2b)
 #' X = mu0 + u + e
@@ -110,7 +110,7 @@ PRMtest <- function(X, rho=3, REML=TRUE){
 #' }
 #' @export
 #' @references
-#' Bai,Y., Wu,B. and ... (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+#' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 PRMap <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML=TRUE){
   ## est
   fn = function(xpar){
@@ -141,8 +141,8 @@ PRMap <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML
 
 #' Monte Carlo power calculation for PRM design problem
 #'
-#' Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average likelihood
-#' based approach.
+#' Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. 
+#' But Monte Carlo simulation offers a straightforward approach.
 #' 
 #' @param alpha desired significance level. Default to 0.05
 #' @param n  number of subjects
@@ -160,7 +160,7 @@ PRMap <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML
 #' }
 #' @export
 #' @references
-#' Bai,Y., Wu,B. and ... (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+#' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 PRMmcp <- function(alpha=0.05,n=20, m=20,s2w=4.44, s2b=1.82, mu=1.01, rho=3, REML=TRUE, B=1e3){
   pval = rep(1, B)
   for(it in 1:B){

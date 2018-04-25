@@ -33,9 +33,9 @@ PRMmcp(alpha = 0.05, n = 20, m = 20, s2w = 4.44, s2b = 1.82,
 }
 }
 \description{
-Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average likelihood
-based approach.
+Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. 
+But Monte Carlo simulation offers a straightforward approach.
 }
 \references{
-Bai,Y., Wu,B. and ... (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 }
