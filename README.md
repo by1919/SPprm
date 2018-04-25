@@ -24,4 +24,10 @@
  PRMap(alpha=0.05,n, m, s2w, s2b, mu, rho+0.75)$pwr
  ## Monte Carlo sim
  PRMmcp(alpha=0.05,n, m, s2w, s2b, mu, rho+0.75)$pwr
+ ## sample size calc
+ aa = PRMas(pwr=0.8,alpha=0.05, m,s2w, s2b, mu, rho+0.75)
+ aa
+ PRMap(alpha=0.05,n=aa$n, m, s2w, s2b, mu, rho+0.75)$pwr
+ PRMmcp(alpha=0.05,n=aa$n, m, s2w, s2b, mu, rho+0.75)$pwr
+
 ```
