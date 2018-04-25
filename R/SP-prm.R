@@ -1,4 +1,4 @@
-## Internal function to compute the log likelihood for paired data Dij under the null value of rho
+## Internal function to compute the log likelihood for paired data Dij
 ## @param xpar vector of log(s2w), log(s2b), mu0
 ## @param Dij  n by m matrix of paired measures
 ## @param rho  null value of sqrt(s2w+s2b+mu0^2)
@@ -26,7 +26,7 @@ Cfun <- function(xpar, rho=3){
    mu0 = xpar[3]
    s2w+s2b+mu0^2-rho^2
 }
-## P-value calc
+## Internal P-value calc func.
 Tpval0 <- function(xq, n, m, s2w, s2b, mu0){
   lam = c(s2w+m*s2b, s2w);   h = c(n,n*(m-1))
   eta0 = n*m*mu0^2/lam[1]
@@ -35,11 +35,11 @@ Tpval0 <- function(xq, n, m, s2w, s2b, mu0){
 } 
 
 
-#' Conduct estimation and RMS test for paired repeated measures (PRM) designs of study
+#' Conduct estimation and QMS test for paired repeated measures (PRM) designs of study
 #'
-#' The problem can be reduced to a mixed effects model estimation under the RMS constraint. Due to the special structure of the
+#' The problem can be reduced to a mixed effects model estimation under a quadratic constraint. Due to the special structure of the
 #' mixed effects model for the PRM designs, we can compute the likelihood analytically and hence efficiently calculate
-#' MLE. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented. 
+#' MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented. 
 #'
 #' @param X n by m matrix of paired measures
 #' @param rho  null threshold of acceptable RMS value
@@ -90,8 +90,8 @@ PRMtest <- function(X, rho, REML=TRUE){
 
 #' Analytical power calculation for PRM design problem
 #'
-#' Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average likelihood
-#' based approach.
+#' Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average log likelihood
+#' based approach to quickly compute the power.
 #' 
 #' @param alpha desired significance level. Default to 0.05
 #' @param n  number of subjects
@@ -142,7 +142,7 @@ PRMap <- function(alpha=0.05, n, m,s2w, s2b, mu, rho, REML=TRUE){
 #' Monte Carlo power calculation for PRM design problem
 #'
 #' Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. 
-#' But Monte Carlo simulation offers a straightforward approach.
+#' Monte Carlo simulation offers a straightforward approach by generating p-value random numbers.
 #' 
 #' @param alpha desired significance level. Default to 0.05
 #' @param n  number of subjects

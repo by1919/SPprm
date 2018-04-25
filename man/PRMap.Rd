@@ -32,8 +32,8 @@ PRMap(alpha = 0.05, n, m, s2w, s2b, mu, rho, REML = TRUE)
 }
 }
 \description{
-Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average likelihood
-based approach.
+Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. We develop an average log likelihood
+based approach to quickly compute the power.
 }
 \references{
 Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.

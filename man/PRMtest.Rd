@@ -2,7 +2,7 @@
 % Please edit documentation in R/SP-prm.R
 \name{PRMtest}
 \alias{PRMtest}
-\title{Conduct estimation and RMS test for paired repeated measures (PRM) designs of study}
+\title{Conduct estimation and QMS test for paired repeated measures (PRM) designs of study}
 \usage{
 PRMtest(X, rho, REML = TRUE)
 }
@@ -20,9 +20,9 @@ PRMtest(X, rho, REML = TRUE)
 }
 }
 \description{
-The problem can be reduced to a mixed effects model estimation under the RMS constraint. Due to the special structure of the
+The problem can be reduced to a mixed effects model estimation under a quadratic constraint. Due to the special structure of the
 mixed effects model for the PRM designs, we can compute the likelihood analytically and hence efficiently calculate
-MLE. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented.
+MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented.
 }
 \examples{
 n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94

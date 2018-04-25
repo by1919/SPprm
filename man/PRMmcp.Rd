@@ -33,7 +33,7 @@ PRMmcp(alpha = 0.05, n, m, s2w, s2b, mu, rho, REML = TRUE, B = 1000)
 }
 \description{
 Due to its nature of composite null hypothesis, it is not trivial to derive the analytical power calculation. 
-But Monte Carlo simulation offers a straightforward approach.
+Monte Carlo simulation offers a straightforward approach by generating p-value random numbers.
 }
 \references{
 Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
