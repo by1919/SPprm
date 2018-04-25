@@ -15,9 +15,11 @@
  e = matrix(rnorm(n*m), n,m)*sqrt(s2w)
  u = rnorm(n)*sqrt(s2b)
  X = mu + u + e
- ## size
+ ## QMS test
  rho = sqrt(s2w+s2b+mu^2)
  PRMtest(X, rho)$p.val
- ## power
  PRMtest(X, rho+0.5)$p.val
+ ## power calculation
+ PRMmcp(alpha=0.05,n, m, s2w, s2b, mu, rho+0.5)$pwr
+ PRMap(alpha=0.05,n, m, s2w, s2b, mu, rho+0.5)$pwr
 ```
