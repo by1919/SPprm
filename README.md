@@ -18,8 +18,10 @@
  ## QMS test
  rho = sqrt(s2w+s2b+mu^2)
  PRMtest(X, rho)$p.val
- PRMtest(X, rho+0.5)$p.val
+ PRMtest(X, rho+0.75)$p.val
  ## power calculation
- PRMmcp(alpha=0.05,n, m, s2w, s2b, mu, rho+0.5)$pwr
- PRMap(alpha=0.05,n, m, s2w, s2b, mu, rho+0.5)$pwr
+ ## analytical calc
+ PRMap(alpha=0.05,n, m, s2w, s2b, mu, rho+0.75)$pwr
+ ## Monte Carlo sim
+ PRMmcp(alpha=0.05,n, m, s2w, s2b, mu, rho+0.75)$pwr
 ```
