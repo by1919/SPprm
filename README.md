@@ -7,7 +7,7 @@
  - Sample R codes
 ```R
  ## install the package
- devtools::install_github(`baolinwu/SPprm')
+ devtools::install_github('baolinwu/SPprm')
  library(SPprm)
  ## simulate PRM data
  n = 20;  m = 10
