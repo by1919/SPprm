@@ -173,3 +173,36 @@ PRMmcp <- function(alpha=0.05,n, m, s2w, s2b, mu, rho, REML=TRUE, B=1e3){
   return( list( pwr=pwr, p.value=pval) )
 }
 
+
+#' Analytical sample size calculation for PRM design problem
+#'
+#' Due to discrete nature of sample size, the power is not a continuous function. This function utilizes the analytical power calculation function PRSap()
+#' to compute an approximate sample size n under a given m (number of measures per unit), which has power closest to the desired power.
+#' 
+#' @param pwr desired power. Default to 0.8
+#' @param alpha desired significance level. Default to 0.05
+#' @param m  number of repeated measures for each subject
+#' @param s2w  within subject variation
+#' @param s2b  between subject variation
+#' @param mu   mean measure difference
+#' @param rho   null threshold of acceptable RMS value
+#' @param REML using REML instead of MLE. Default to TRUE.
+#' @return
+#' \describe{
+#'   \item{n}{ computed number of units }
+#'   \item{pwr}{ actual power under the computed sample size }
+#' }
+#' @export
+#' @references
+#' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+PRMas <- function(pwr=0.8,alpha=0.05, m,s2w, s2b, mu, rho, REML=TRUE){
+  ## est
+  fn = function(n) PRMap(alpha, round(n), m,s2w, s2b, mu, rho, REML)$pwr - pwr
+  a1 = 5; while(fn(a1)>0) a1 = a1/2
+  a2 = 30; while(fn(a2)<0) a2 = a2*2
+  n = round( uniroot(fn, c(a1,a2))$root )
+  pwr1 = PRMap(alpha, n, m,s2w, s2b, mu, rho, REML)$pwr
+  return( list(n=n, pwr=pwr1) )
+}
+
+
