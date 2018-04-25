@@ -17,7 +17,8 @@
  X = mu + u + e
  ## size
  rho = sqrt(s2w+s2b+mu^2)
- PRMtest(X, rho)
+ PRMtest(X, rho)$p.val
  ## power
- PRMtest(X, rho+0.5)
+ PRMtest(X, rho+0.5)$p.val
+
 ```
