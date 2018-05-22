@@ -1,18 +1,19 @@
-#' Compute the tail probability of weighted sum of non-central chi-square random variables
-#'
-#' Use Davies' method and apply a relative error bound (avoid redundant computations): efficient and accurate.
-#' @param Q.all  test statistics
-#' @param lambda  mixing coefficients
-#' @param h  DFs of chi-square dist
-#' @param delta  non-centrality parameters of chi-square dist
-#' @param acc  relative error bound
-#' @param lim  maximum number of integration terms
-#' @return tail probability
-#' @export
-#' @references
-#' Wu,B., Guan,W., Pankow,J.S. (2016) On efficient and accurate calculation of significance p-values for sequence kernel association test of variant set. \emph{Annals of human genetics}, 80(2), 123-135.
-#'
-#' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
+## Internal func.
+# ' Compute the tail probability of weighted sum of non-central chi-square random variables
+# '
+# ' Use Davies' method and apply a relative error bound (avoid redundant computations): efficient and accurate.
+# ' @param Q.all  test statistics
+# ' @param lambda  mixing coefficients
+# ' @param h  DFs of chi-square dist
+# ' @param delta  non-centrality parameters of chi-square dist
+# ' @param acc  relative error bound
+# ' @param lim  maximum number of integration terms
+# ' @return tail probability
+# ' @export
+# ' @references
+# ' Wu,B., Guan,W., Pankow,J.S. (2016) On efficient and accurate calculation of significance p-values for sequence kernel association test of variant set. \emph{Annals of human genetics}, 80(2), 123-135.
+# '
+# ' Bai,Y., Wang,Z., Lystig,T.C., and Wu,B. (2018) Statistical test with sample size and power calculation for paired repeated measures designs of method comparison studies.
 pchisum <- function(Q.all, lambda, h = rep(1, length(lambda)), delta = rep(0, length(lambda)), acc=1e-2,lim=1e7){
   pval = pnchisum(Q.all,lambda,h,delta)
   i1 = which(is.finite(Q.all))
