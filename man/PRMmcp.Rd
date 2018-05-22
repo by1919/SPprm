@@ -19,7 +19,7 @@ PRMmcp(alpha = 0.05, n, m, s2w, s2b, mu, rho, REML = TRUE, B = 1000)
 
 \item{mu}{mean measure difference}
 
-\item{rho}{null threshold of acceptable QMS value}
+\item{rho}{null threshold of acceptable RMS value}
 
 \item{REML}{using REML instead of MLE. Default to TRUE.}
 

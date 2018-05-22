@@ -9,7 +9,7 @@ PRMtest(X, rho, REML = TRUE)
 \arguments{
 \item{X}{n by m matrix of paired measures}
 
-\item{rho}{null threshold of acceptable QMS value}
+\item{rho}{null threshold of acceptable RMS value}
 
 \item{REML}{using REML instead of MLE. Default to TRUE.}
 }

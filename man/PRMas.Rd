@@ -19,7 +19,7 @@ PRMas(pwr = 0.8, alpha = 0.05, m, s2w, s2b, mu, rho, REML = TRUE)
 
 \item{mu}{mean measure difference}
 
-\item{rho}{null threshold of acceptable QMS value}
+\item{rho}{null threshold of acceptable RMS value}
 
 \item{REML}{using REML instead of MLE. Default to TRUE.}
 }

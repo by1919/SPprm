@@ -42,7 +42,7 @@ Tpval0 <- function(xq, n, m, s2w, s2b, mu0){
 #' MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented. 
 #'
 #' @param X n by m matrix of paired measures
-#' @param rho  null threshold of acceptable QMS value
+#' @param rho  null threshold of acceptable RMS value
 #' @param REML using REML instead of MLE. Default to TRUE.
 #' @return
 #' \describe{
@@ -99,7 +99,7 @@ PRMtest <- function(X, rho, REML=TRUE){
 #' @param s2w  within subject variation
 #' @param s2b  between subject variation
 #' @param mu   mean measure difference
-#' @param rho   null threshold of acceptable QMS value
+#' @param rho   null threshold of acceptable RMS value
 #' @param REML using REML instead of MLE. Default to TRUE.
 #' @return
 #' \describe{
@@ -150,7 +150,7 @@ PRMap <- function(alpha=0.05, n, m,s2w, s2b, mu, rho, REML=TRUE){
 #' @param s2w  within subject variation
 #' @param s2b  between subject variation
 #' @param mu   mean measure difference
-#' @param rho   null threshold of acceptable QMS value
+#' @param rho   null threshold of acceptable RMS value
 #' @param REML using REML instead of MLE. Default to TRUE.
 #' @param B   total number of Monte Carlo simulations. Default to 1000.
 #' @return
@@ -185,7 +185,7 @@ PRMmcp <- function(alpha=0.05,n, m, s2w, s2b, mu, rho, REML=TRUE, B=1e3){
 #' @param s2w  within subject variation
 #' @param s2b  between subject variation
 #' @param mu   mean measure difference
-#' @param rho   null threshold of acceptable QMS value
+#' @param rho   null threshold of acceptable RMS value
 #' @param REML using REML instead of MLE. Default to TRUE.
 #' @return
 #' \describe{
