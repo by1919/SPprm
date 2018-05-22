@@ -1,8 +1,10 @@
-#' Compute the tail probability of weighted sum of 1-DF chi-square rvs
+#' Compute the tail probability of weighted sum of non-central chi-square random variables
 #'
 #' Use Davies' method and apply a relative error bound (avoid redundant computations): efficient and accurate.
 #' @param Q.all  test statistics
 #' @param lambda  mixing coefficients
+#' @param h  DFs of chi-square dist
+#' @param delta  non-centrality parameters of chi-square dist
 #' @param acc  relative error bound
 #' @param lim  maximum number of integration terms
 #' @return tail probability

@@ -2,7 +2,7 @@
 % Please edit documentation in R/chisum-prob.R
 \name{pchisum}
 \alias{pchisum}
-\title{Compute the tail probability of weighted sum of 1-DF chi-square rvs}
+\title{Compute the tail probability of weighted sum of non-central chi-square random variables}
 \usage{
 pchisum(Q.all, lambda, h = rep(1, length(lambda)), delta = rep(0,
   length(lambda)), acc = 0.01, lim = 1e+07)
@@ -11,6 +11,10 @@ pchisum(Q.all, lambda, h = rep(1, length(lambda)), delta = rep(0,
 \item{Q.all}{test statistics}
 
 \item{lambda}{mixing coefficients}
+
+\item{h}{DFs of chi-square dist}
+
+\item{delta}{non-centrality parameters of chi-square dist}
 
 \item{acc}{relative error bound}
 
