@@ -30,4 +30,8 @@
  ## PRMap(alpha=0.05,n=aa$n, m, s2w, s2b, mu, rho+0.75)$pwr
  PRMmcp(alpha=0.05,n=aa$n, m, s2w, s2b, mu, rho+0.75)$pwr
 
+ ## analyze the oxymetry comparison data
+ data(poData)
+ RMSt(poData$Y,poData$A)
+
 ```
