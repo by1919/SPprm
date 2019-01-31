@@ -23,6 +23,7 @@ PRMtest(X, rho, REML = TRUE)
 The problem can be reduced to a mixed effects model estimation under a quadratic constraint. Due to the special structure of the
 mixed effects model for the PRM designs, we can compute the likelihood analytically and hence efficiently calculate
 MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented.
+This function works for balanced designs.
 }
 \examples{
 n=20; m=20; s2w=4.44; s2b=1.2; mu0=0.94

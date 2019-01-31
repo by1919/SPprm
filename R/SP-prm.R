@@ -39,7 +39,8 @@ Tpval0 <- function(xq, n, m, s2w, s2b, mu0){
 #'
 #' The problem can be reduced to a mixed effects model estimation under a quadratic constraint. Due to the special structure of the
 #' mixed effects model for the PRM designs, we can compute the likelihood analytically and hence efficiently calculate
-#' MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented. 
+#' MLE/REML. See the reference of Bai et. al (2018). The score and Wald Z-tests are also implemented.
+#' This function works for balanced designs. 
 #'
 #' @param X n by m matrix of paired measures
 #' @param rho  null threshold of acceptable RMS value
